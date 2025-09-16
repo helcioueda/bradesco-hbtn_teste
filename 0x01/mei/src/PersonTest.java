@@ -34,9 +34,9 @@ public class PersonTest {
     public void person_is_MEI() {
         person.setSalary(10000); 
         person.setSalary(10000); 
-        person.setAnotherCompanyOwner(false);
-        person.setPensioner(false);
-        person.setPublicServer(false);
+        person.anotherCompanyOwner = false;
+        person.pensioner = false;
+        person.publicServer = false;
         
         assertTrue(person.isMEI());
     }

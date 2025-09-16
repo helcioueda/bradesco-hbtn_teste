@@ -4,17 +4,19 @@ import java.time.Period;
 import java.time.ZoneId;
 
 public class Person {
-    private String name;
-    private String surname;
-    private Date birthDate;
-    private boolean anotherCompanyOwner;
-    private boolean pensioner;
-    private boolean publicServer;
-    private float salary;
+	public String name;
+	public String surname;
+	public String fullName;
+	public Date birthDate;
+	public boolean anotherCompanyOwner;
+	public boolean pensioner;
+	public boolean publicServer;
+	public float salary;
 
     public Person(String name, String surname, Date birthDate, boolean anotherCompanyOwner, boolean pensioner, boolean publicServer) {
         this.name = name;
         this.surname = surname;
+        this.fullName = this.name + " " + this.surname;
         this.birthDate = birthDate;
         this.anotherCompanyOwner = anotherCompanyOwner;
         this.pensioner = pensioner;
@@ -22,7 +24,7 @@ public class Person {
     }
 
     public String getFullName() {
-        return this.name + " " + this.surname;
+    	return this.fullName;
     }
 
     public float getSalary() {
@@ -49,16 +51,4 @@ public class Person {
                !this.pensioner &&
                !this.publicServer;
     }
-
-	public void setPensioner(boolean pensioner) {
-		this.pensioner = pensioner;
-	}
-
-	public void setAnotherCompanyOwner(boolean anotherCompanyOwner) {
-		this.anotherCompanyOwner = anotherCompanyOwner;
-	}
-
-	public void setPublicServer(boolean publicServer) {
-		this.publicServer = publicServer;
-	}
 }
